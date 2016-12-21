@@ -70,6 +70,7 @@ void Ode::output_solution()
     if(nout==1)
     {
         ofstream outfile(solution_file_name+string(".m"), ofstream::out);
+				std::cout << solution_file_name;
         outfile<<setprecision(16)<<"t("<<nout<<")="<<t<<";"<<endl;
         outfile<<"y("<<nout<<",:)=[";
         for(int i=0;i<neqn-1;i++)

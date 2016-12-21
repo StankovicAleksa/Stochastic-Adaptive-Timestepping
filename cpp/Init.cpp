@@ -37,16 +37,30 @@ void Init::initSde(Sde*& sde)
 
 void Init::initBrownianMotion(BrownianMotion*& W, Sde* sde, TimeIntegrator* integr)
 {
-    if(continuous)
+    if(continuous){
+			if (dtadap)
+        W = new ContinuousAdaptedBrownianMotion(sde->brownian_size(), 
+                                         integr->needDoubleIntegral(),
+                                         sde->is_commutative(),
+                                         sde->isDiagonal());
+			else
         W = new ContinuousBrownianMotion(sde->brownian_size(), 
                                          integr->needDoubleIntegral(),
                                          sde->is_commutative(),
                                          sde->isDiagonal());
-    else
+		}
+    else{
+			if ( dtadap)
+        W = new DiscreteAdaptedBrownianMotion(sde->brownian_size(), 
+                                       integr->needDoubleIntegral(),
+                                       sde->is_commutative(),
+                                       sde->isDiagonal());
+			else
         W = new DiscreteBrownianMotion(sde->brownian_size(), 
                                        integr->needDoubleIntegral(),
                                        sde->is_commutative(),
                                        sde->isDiagonal());
+		}
 }
 
 void Init::initTimeIntegrator(TimeIntegrator*& rk, Ode* ode)

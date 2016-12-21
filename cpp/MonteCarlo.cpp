@@ -47,6 +47,7 @@ void MonteCarlo::iterate(Real h)
 //        #pragma omp for reduction(+:error,val,n_f_eval,n_g_eval,acc_steps,rej_steps) schedule(dynamic,1000)
         for(int i=1;i<=iterations;i++)
         {
+						W->eraseHistory();
             sde->reinit();
             integrator->reinit();
             h=oh;

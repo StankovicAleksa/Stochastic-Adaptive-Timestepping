@@ -5,19 +5,19 @@
 
 int main(int argc, char** argv)
 {
-    
     // default parameters
-    int ntest = 1;
-    Real dt = 1.0;
-    Real rtol = 1e-2;
+    int ntest = 4;
+    Real dt = 0.050;
+    Real rtol = 1.5e-3;
     Real atol = rtol;
-    bool dt_adaptivity = false;
+    bool dt_adaptivity = true;
     string solver = "SROCK2";
+    //string solver = "ROCK2";
     int output_frequency = 0;
-    bool verbose = true;
+    bool verbose = false;
     string output_file = "solution";
-    int iter = 1; //monte carlo iterations
-    bool continuous_brown = false;
+    int iter = 10000000; //monte carlo iterations
+    bool continuous_brown = true;
     bool deterministic=false;    
     bool end;
     

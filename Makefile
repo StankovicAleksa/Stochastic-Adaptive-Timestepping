@@ -69,6 +69,9 @@ clean: .clean-post
 .clean-post: .clean-impl
 # Add your post 'clean' code here...
 
+# run
+run:
+	./dist/Debug/GNU-Linux-x86/stochastic_adaptive_time_stepping
 
 # clobber
 clobber: .clobber-post
