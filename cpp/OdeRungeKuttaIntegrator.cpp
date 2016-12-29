@@ -221,17 +221,23 @@ bool  OdeRungeKuttaIntegrator::integrate(Real& h)
      * Estimates the optimal time step size using the local error estimation
      * of the current and previous step. 
      */
+
+		// New scheme introduced
     
-    //we use this estimation if the previous step has been accepted and it isn't
+		const static Real fc=0.8	;
+		//we use this estimation if the previous step has been accepted and it isn't
     //the first error estimation that we do
     if(!reject && !firsterrorestimation)
     {
+			/* Aleksa old way
         facp=1.0/err;
         fac=facp*(h/hp);
         fac=errp*fac*fac;
 
         fac=min(facp,fac);
         fac=sqrt(fac);
+				*/
+		 	fac=pow(fc/err,0.11)*pow(errp/fc,0.009);
     }
     else //in first step we go here, or if the previous step has been rejected
         fac=sqrt(1.0/err);

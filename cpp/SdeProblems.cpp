@@ -197,7 +197,7 @@ SdeLinear::SdeLinear(string output_file)
     t=t0;
     
     lambda = -1.;
-    sigma = 1.;
+    sigma = 0.1;
     
     init_solution();
 }

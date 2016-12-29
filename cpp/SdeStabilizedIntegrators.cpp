@@ -201,6 +201,7 @@ void SROCK2::step_diagonal_noise(const Real t, const Real& h)
         
     err = errD+pow(errS,4./3.); 
     err = 0.5*err;
+    //err = errD+errS
     
     swap_ptr = ynpu;
     ynpu=yjm2;

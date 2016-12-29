@@ -1,0 +1,126 @@
+./dist/Debug/GNU-Linux-x86/stochastic_adaptive_time_stepping
+
+-------------------   Monte Carlo Info   -------------------
+Number of iterations: 100000000
+SDE solver: SROCK2
+Test number: 4
+Time step size: 1
+Time-step adaptivity disabled.
+Brownian motion: discrete.
+Absolute tolerance = 0.001
+Relative tolerance = 0.001
+------------------------------------------------------------
+
+-----------------   Running Monte Carlo   ------------------
+Monte Carlo iterations at 1.000%
+Monte Carlo iterations at 2.000%
+Monte Carlo iterations at 3.000%
+Monte Carlo iterations at 4.000%
+Monte Carlo iterations at 5.000%
+Monte Carlo iterations at 6.000%
+Monte Carlo iterations at 7.000%
+Monte Carlo iterations at 8.000%
+Monte Carlo iterations at 9.000%
+Monte Carlo iterations at 10.000%
+Monte Carlo iterations at 11.000%
+Monte Carlo iterations at 12.000%
+Monte Carlo iterations at 13.000%
+Monte Carlo iterations at 14.000%
+Monte Carlo iterations at 15.000%
+Monte Carlo iterations at 16.000%
+Monte Carlo iterations at 17.000%
+Monte Carlo iterations at 18.000%
+Monte Carlo iterations at 19.000%
+Monte Carlo iterations at 20.000%
+Monte Carlo iterations at 21.000%
+Monte Carlo iterations at 22.000%
+Monte Carlo iterations at 23.000%
+Monte Carlo iterations at 24.000%
+Monte Carlo iterations at 25.000%
+Monte Carlo iterations at 26.000%
+Monte Carlo iterations at 27.000%
+Monte Carlo iterations at 28.000%
+Monte Carlo iterations at 29.000%
+Monte Carlo iterations at 30.000%
+Monte Carlo iterations at 31.000%
+Monte Carlo iterations at 32.000%
+Monte Carlo iterations at 33.000%
+Monte Carlo iterations at 34.000%
+Monte Carlo iterations at 35.000%
+Monte Carlo iterations at 36.000%
+Monte Carlo iterations at 37.000%
+Monte Carlo iterations at 38.000%
+Monte Carlo iterations at 39.000%
+Monte Carlo iterations at 40.000%
+Monte Carlo iterations at 41.000%
+Monte Carlo iterations at 42.000%
+Monte Carlo iterations at 43.000%
+Monte Carlo iterations at 44.000%
+Monte Carlo iterations at 45.000%
+Monte Carlo iterations at 46.000%
+Monte Carlo iterations at 47.000%
+Monte Carlo iterations at 48.000%
+Monte Carlo iterations at 49.000%
+Monte Carlo iterations at 50.000%
+Monte Carlo iterations at 51.000%
+Monte Carlo iterations at 52.000%
+Monte Carlo iterations at 53.000%
+Monte Carlo iterations at 54.000%
+Monte Carlo iterations at 55.000%
+Monte Carlo iterations at 56.000%
+Monte Carlo iterations at 57.000%
+Monte Carlo iterations at 58.000%
+Monte Carlo iterations at 59.000%
+Monte Carlo iterations at 60.000%
+Monte Carlo iterations at 61.000%
+Monte Carlo iterations at 62.000%
+Monte Carlo iterations at 63.000%
+Monte Carlo iterations at 64.000%
+Monte Carlo iterations at 65.000%
+Monte Carlo iterations at 66.000%
+Monte Carlo iterations at 67.000%
+Monte Carlo iterations at 68.000%
+Monte Carlo iterations at 69.000%
+Monte Carlo iterations at 70.000%
+Monte Carlo iterations at 71.000%
+Monte Carlo iterations at 72.000%
+Monte Carlo iterations at 73.000%
+Monte Carlo iterations at 74.000%
+Monte Carlo iterations at 75.000%
+Monte Carlo iterations at 76.000%
+Monte Carlo iterations at 77.000%
+Monte Carlo iterations at 78.000%
+Monte Carlo iterations at 79.000%
+Monte Carlo iterations at 80.000%
+Monte Carlo iterations at 81.000%
+Monte Carlo iterations at 82.000%
+Monte Carlo iterations at 83.000%
+Monte Carlo iterations at 84.000%
+Monte Carlo iterations at 85.000%
+Monte Carlo iterations at 86.000%
+Monte Carlo iterations at 87.000%
+Monte Carlo iterations at 88.000%
+Monte Carlo iterations at 89.000%
+Monte Carlo iterations at 90.000%
+Monte Carlo iterations at 91.000%
+Monte Carlo iterations at 92.000%
+Monte Carlo iterations at 93.000%
+Monte Carlo iterations at 94.000%
+Monte Carlo iterations at 95.000%
+Monte Carlo iterations at 96.000%
+Monte Carlo iterations at 97.000%
+Monte Carlo iterations at 98.000%
+Monte Carlo iterations at 99.000%
+Monte Carlo iterations at 100.000%
+------------------------------------------------------------
+
+----------------   Monte Carlo Statistics   ----------------
+Running Time: 1836.7523909999999887 seconds.
+Mean of f evaluations: 6.9999999827548747
+Mean of g evaluations: 4.9999999980615950
+Mean of accepted steps: 1.0000000022898672
+Mean of rejected steps: 0.0000000000000000
+E(phi(X)) = 0.4169518326496111
+Error on E(phi(X)): 0.0490723919866124
+------------------------------------------------------------
+

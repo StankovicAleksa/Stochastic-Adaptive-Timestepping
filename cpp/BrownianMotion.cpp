@@ -190,12 +190,6 @@ void ContinuousAdaptedBrownianMotion::sample(Real t, Real h)
 	for ( int i=0;i<Ir.size();i++){
 		s_val=upper_bound(samples[i].begin(),samples[i].end(),sp_sample(t-eps,0))->val;	
 
-		// bug check 
-		if ( fabs(t-upper_bound(samples[i].begin(),samples[i].end(),sp_sample(t-eps,0))->t)*1000 > 1e-5 ){
-			printf("%lf\n",t-upper_bound(samples[i].begin(),samples[i].end(),sp_sample(t-eps,0))->t);	
-		}
-		// bug check end 
-
 		// find samples for t0< t < t1
 		sp_is1=std::upper_bound(samples[i].begin(),samples[i].end(),sp_sample(t+h-eps,0));
 		while ( sp_is1!= samples[i].end() && sp_is1->t < t+ h ){
@@ -214,12 +208,10 @@ void ContinuousAdaptedBrownianMotion::sample(Real t, Real h)
 			std_dev=sqrt(t_t0*t1_t/t1_t0);
 		}
 		Ir(i)=exp+std_dev*normal(gen);
-
 		// Biased sampling
 		//Ir(i)=sqrt(h)*normal(gen);
     
 		Irr(i) = 0.5*(Ir(i)*Ir(i)-h);
-		//printf("pfff %lf %lf %lf\n",t,h,Ir(i));
 		std::cout.flush();
 		samples[i].insert(sp_sample(t+h,Ir(i)+s_val));
 	}	 
@@ -264,12 +256,6 @@ void DiscreteAdaptedBrownianMotion::sample(Real t, Real h)
 		for ( int i=0;i<Ir.size();i++){
 			s_val=upper_bound(samples[i].begin(),samples[i].end(),sp_sample(t-eps,0))->val;	
 
-			// bug check 
-			if ( fabs(t-upper_bound(samples[i].begin(),samples[i].end(),sp_sample(t-eps,0))->t)*1000 > 1e-5 ){
-				printf("%lf\n",t-upper_bound(samples[i].begin(),samples[i].end(),sp_sample(t-eps,0))->t);	
-			}
-			// bug check end 
-
 			// find samples for t0< t < t1
 			sp_is1=std::upper_bound(samples[i].begin(),samples[i].end(),sp_sample(t+h-eps,0));
 			while ( sp_is1!= samples[i].end() && sp_is1->t < t+ h ){
@@ -290,9 +276,8 @@ void DiscreteAdaptedBrownianMotion::sample(Real t, Real h)
       xi = xid(gen);
       xi = (xi<=4.) ? 0. : ((xi==5.) ? sqr3 : -sqr3) ;
 			Ir(i)=exp+std_dev*xi;
-
 			// Biased sampling
-			//Ir(i)=sqrt(h)*normal(gen);
+			//Ir(i)=sqrt(h)*xi;
 			
 			Irr(i) = 0.5*(Ir(i)*Ir(i)-h);
 			std::cout.flush();

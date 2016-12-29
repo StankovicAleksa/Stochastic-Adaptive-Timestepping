@@ -7,17 +7,17 @@ int main(int argc, char** argv)
 {
     // default parameters
     int ntest = 4;
-    Real dt = 0.050;
-    Real rtol = 1.5e-3;
+    Real dt = 1.00/16;
+    Real rtol = 1e-3;
     Real atol = rtol;
-    bool dt_adaptivity = true;
+    bool dt_adaptivity = false;
     string solver = "SROCK2";
     //string solver = "ROCK2";
     int output_frequency = 0;
-    bool verbose = false;
+    bool verbose = true;
     string output_file = "solution";
-    int iter = 10000000; //monte carlo iterations
-    bool continuous_brown = true;
+    int iter = 100000000; //monte carlo iterations
+    bool continuous_brown = false;
     bool deterministic=false;    
     bool end;
     
