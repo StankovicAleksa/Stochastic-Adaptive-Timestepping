@@ -279,6 +279,7 @@ void DiscreteAdaptedBrownianMotion::sample(Real t, Real h)
 			// Biased sampling
 			//Ir(i)=sqrt(h)*xi;
 			
+			//Irr(i) = 0.5*(Ir(i)*Ir(i)-std_dev*std_dev);
 			Irr(i) = 0.5*(Ir(i)*Ir(i)-h);
 			std::cout.flush();
 			samples[i].insert(sp_sample(t+h,Ir(i)+s_val));

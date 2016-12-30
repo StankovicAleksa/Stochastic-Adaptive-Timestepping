@@ -20,8 +20,8 @@ void MonteCarlo::iterate(Real h)
     Real rej_steps=0.;
     string solution_file;
     
-    //const int ofreq = iterations/100;
-    const int ofreq = iterations/100;  // Aleksa update
+    const int ofreq = iterations/100;
+    //const int ofreq = iterations/10;  // Aleksa update
     const Real oh=h;
    
     TimeIntegrator* integrator=0;

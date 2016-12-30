@@ -233,3 +233,77 @@ void SdeLinear::rho(Real& eigmax)
 {
     eigmax = abs(lambda);
 }
+
+
+
+// Stochastic Krogh10 problem
+// Test problem 10 from Krogh
+Stochastic_Krogh10::Stochastic_Krogh10(string output_file)
+:Ode(string("Tests/Stochastic_Krogh10/")+output_file),
+ Sde(string("Tests/Stochastic_Krogh10/")+output_file)
+{
+    neqn=4;
+		Wsize=4;
+
+    diagonal = true;
+    commutative = true;
+
+    cte_rho = false;
+    know_rho = true;
+
+
+    t0= 0.0;
+    tend = 6.19216933131963970674;
+    t=t0;
+    mu = 1./82.45;
+    mus = 1.-mu;
+    
+    init_solution();
+}
+
+void Stochastic_Krogh10::init_solution()
+{
+    y = new Vector(neqn);
+    
+    // These initial conditions give a periodic solution, so they are also
+    // exact solution at tend
+    (*y)(0)=1.2;
+    (*y)(1)=0.0;
+    (*y)(2)=0.0;
+    (*y)(3)= -1.0493575098031990726;
+}
+
+void Stochastic_Krogh10::f(Real t, Vector& x, Vector& fx)
+{   
+
+    Real y1 = x(0);
+    Real y2 = x(1);
+    Real y1p = x(2);
+    Real y2p = x(3);
+    Real r1 = sqrt(((y1+mu)*(y1+mu)+y2*y2));
+    Real r2 = sqrt(((y1-mus)*(y1-mus)+y2*y2));
+    r1 = r1*r1*r1;
+    r2 = r2*r2*r2;
+    
+    fx(0) = y1p;
+    fx(1) = y2p;
+    fx(2) = 2.*y2p+y1-mus*(y1+mu)/r1-mu*(y1-mus)/r2;
+    fx(3) = -2.*y1p+y2-mus*y2/r1-mu*y2/r2;
+}
+void Stochastic_Krogh10::g(Real t, Vector& x, Vector& G){
+	G(0)=0.;
+	G(1)=0.;
+	G(2)=0.;
+	G(3)=0.;
+}
+Real  Stochastic_Krogh10::phi(){
+	return (*y)(0)*(*y)(0);
+}
+Real Stochastic_Krogh10::Exact_phi(){
+	return 1.0;
+}
+
+void Stochastic_Krogh10::rho(Real& eigmax)
+{
+    eigmax = abs(0.25+0.5*(*y)(0)/sqrt((*y)(0)*(*y)(0)+1.));
+}

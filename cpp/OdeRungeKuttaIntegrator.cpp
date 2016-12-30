@@ -229,15 +229,14 @@ bool  OdeRungeKuttaIntegrator::integrate(Real& h)
     //the first error estimation that we do
     if(!reject && !firsterrorestimation)
     {
-			/* Aleksa old way
-        facp=1.0/err;
+			// Aleksa old way
+       /* facp=1.0/err;
         fac=facp*(h/hp);
         fac=errp*fac*fac;
 
         fac=min(facp,fac);
-        fac=sqrt(fac);
-				*/
-		 	fac=pow(fc/err,0.11)*pow(errp/fc,0.009);
+        fac=sqrt(fac); */
+		 	fac=pow(fc/err,0.11/2.5)*pow(errp/fc,0.009/2.5);
     }
     else //in first step we go here, or if the previous step has been rejected
         fac=sqrt(1.0/err);

@@ -31,6 +31,8 @@ void Init::initSde(Sde*& sde)
         sde = new StochasticTwoBodyProblem(output_file);
     else if(ntest==4)
         sde = new SdeLinear(output_file);
+		else if(ntest==5)
+				sde = new Stochastic_Krogh10(output_file);
     else
         cout<<"Problem not known"<<endl;
 }

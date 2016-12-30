@@ -89,5 +89,26 @@ protected:
 
 };
 
+
+class Stochastic_Krogh10: public Sde
+{
+public:
+    Stochastic_Krogh10(string output_file);
+    virtual ~Stochastic_Krogh10(){};
+ 
+    void init_solution();
+    void f(Real t, Vector& x, Vector& fx);
+    void g(Real t, Vector& x, Vector& G);
+        
+    Real phi();
+    Real Exact_phi();
+    void rho(Real& eigmax);
+
+protected:
+    Real mu;
+    Real mus;
+};
+
+
 #endif	/* SDEPROBLEMS_H */
 
